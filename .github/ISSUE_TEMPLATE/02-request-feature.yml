@@ -27,15 +27,15 @@ body:
   attributes:
     label: "Describe the solution you'd like"
     description: "A clear and concise description of what you want to happen."
-  renderer: text
+    render: text
   validations:
     required: true
 - type: textarea
   id: alternatives
-  renderer: text
   attributes:
     label: "Describe alternatives you've considered"
     description: "A clear and concise description of any alternative solutions or features you've considered."
+    render: text
   validations:
     required: true
 - type: textarea
