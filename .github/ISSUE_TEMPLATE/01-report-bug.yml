@@ -6,7 +6,6 @@ labels: bug
 title: "[REPORT: BUG]"
 type: Bug
 
----
 body:
 - type: textarea
   id: bug-description
