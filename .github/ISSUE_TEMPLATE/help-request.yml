@@ -4,7 +4,6 @@ description: Request help with an issue
 assignees: schmittyd
 labels: "help wanted"
 title: "[REQUEST: HELP]"
-type: 
 ---
 
 body:
