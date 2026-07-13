@@ -5,7 +5,6 @@ assignees: schmittyd
 labels: bug
 title: "[REPORT: BUG]"
 type: Bug
-
 body:
 - type: textarea
   id: bug-description
@@ -26,7 +25,6 @@ body:
     description: "A clear and concise description of what you expected to happen."
   validations:
     required: true
-    
 - type: textarea
   id: screenshots
   attributes:
@@ -34,7 +32,6 @@ body:
     description: "If applicable, add screenshots to help explain your problem."
   validations:
     required: true
-
 - type: dropdown
   id: os
   attributes:
@@ -82,7 +79,6 @@ body:
     placeholder: "22.0.0"
   validations:
     required: false
-
 - type: dropdown
   id: smartphone-os
   attributes:
@@ -120,8 +116,6 @@ body:
     placeholder: "22.0.0"
   validations:
     required: false
- - Version: [eg. 22]
-
 - type: textarea
   id: context
   attributes:
