@@ -34,6 +34,14 @@ body:
     description: "If applicable, add screenshots to help explain your problem."
   validations:
     required: true
+- type: textarea
+  id: context
+  attributes:
+    label: "Additional context"
+    description: "If applicable, add any additional context to help explain your problem."
+    render: text
+  validations:
+    required: false
 - type: dropdown
   id: os
   attributes:
@@ -44,7 +52,7 @@ body:
       - Windows
       - Linux
   validations:
-    required: false
+    required: true
 - type: input
   id: linux-distro
   attributes:
@@ -121,10 +129,3 @@ body:
     placeholder: "22.0.0"
   validations:
     required: false
-- type: textarea
-  id: context
-  attributes:
-    label: "Additional context"
-    description: "If applicable, add screenshots to help explain your problem."
-  validations:
-    required: true
