@@ -15,7 +15,7 @@ body:
 - type: input
   id: solution
   attributes:
-    label: help wanted
+    label: Desired solution
     description: "Describe the solution you'd like"
     placeholder: "A clear and concise description of what you want to happen."
   validations:
@@ -23,7 +23,7 @@ body:
 - type: input
   id: alternatives
   attributes:
-    label: help wanted
+    label: Considered alternatives
     description: "Describe alternatives you've considered"
     placeholder: "A clear and concise description of any alternative solutions or features you've considered."
   validations:
@@ -31,8 +31,8 @@ body:
 - type: input
   id: context
   attributes:
-    label: help wanted
+    label: Additional context
     description: "Additional context"
-    placeholder: "Add any other context or screenshots"
+    placeholder: "Add any other context or screenshots to assist us in helping you"
   validations:
     required: true
