@@ -32,14 +32,14 @@ body:
 - type: textarea
   id: alternatives
   attributes:
-    label: Describe alternatives you've considered
+    label: "Describe alternatives you've considered"
     description: "A clear and concise description of any alternative solutions or features you've considered."
   validations:
     required: true
 - type: input
   id: context
   attributes:
-    label: Bug prevalence
+    label: Additional context
     description: "Additional context"
     placeholder: "Add any other context or screenshots about the feature request here."
   validations:
