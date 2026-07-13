@@ -7,4 +7,4 @@
 ## Contributors
 
 
-[Contribution guidelines for this project](docs/CONTRIBUTING.md)
+[Contribution guidelines for this project](CONTRIBUTING.md)
