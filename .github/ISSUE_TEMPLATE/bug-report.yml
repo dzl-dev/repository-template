@@ -1,0 +1,154 @@
+---
+name: Bug report
+description: Create a report to help us improve
+assignees: schmittyd
+labels: bug
+title: "[REPORT: BUG]"
+type: Bug
+
+---
+body:
+- type: textarea
+  id: bug-description
+  attributes:
+    label: Describe the bug
+    description: "A clear and concise description of what the bug is."
+    value: |
+      1. Go to '...'
+      2. Click on '....'
+      3. Scroll down to '....'
+      4. See error
+    render: bash
+  validations:
+    required: true
+
+- type: textarea
+  id: behavior-expected
+  attributes:
+    label: Expected behavior
+    description: "A clear and concise description of what you expected to happen."
+    value: |
+
+
+
+    
+    render: bash
+  validations:
+    required: true
+    
+- type: textarea
+  id: screenshots
+  attributes:
+    label: Screenshots
+    description: "If applicable, add screenshots to help explain your problem."
+    value: |
+
+
+
+    
+    render: bash
+  validations:
+    required: true
+---
+- type: dropdown
+  id: os
+  attributes:
+    label: OS
+    options:
+      - Not applicable
+      - macOS
+      - Windows
+      - Linux
+  validations:
+    required: false
+- type: input
+  id: linux-distro
+  attributes:
+    label: Linux distro
+    description: "Linux Distribution"
+    placeholder: "Ubuntu, Fedora, Keli, etc..."
+  validations:
+    required: false
+- type: input
+  id: os-version
+  attributes:
+    label: OS version
+    description: "Operating System version"
+    placeholder: "26.0.0"
+  validations:
+    required: false
+- type: dropdown
+  id: desktop-browser
+  attributes:
+    label: Web Browser
+    options:
+      - Brave
+      - Chrome
+      - Edge
+      - Opera
+      - Safari
+  validations:
+    required: true
+- type: input
+  id: desktop-browser-version
+  attributes:
+    label: Browser version
+    description: "Browser version"
+    placeholder: "22.0.0"
+  validations:
+    required: false
+---
+ - Device: [eg. iPhone 15]
+ - OS: [e.g. iOS 26]
+- type: dropdown
+  id: smartphone-os
+  attributes:
+    label: Smarthphone OS
+    options:
+      - Android
+      - iOS
+  validations:
+    required: true
+- type: input
+  id: smartphone-os-version
+  attributes:
+    label: Smarthphone OS version
+    description: "Smarthphone Operating System version"
+    placeholder: "22.0.0"
+  validations:
+    required: false
+- type: dropdown
+  id: browser
+  attributes:
+    label: Web Browser
+    options:
+      - Brave
+      - Chrome
+      - Edge
+      - Opera
+      - Safari
+  validations:
+    required: true
+- type: input
+  id: smartphone-browser-version
+  attributes:
+    label: Browser version
+    description: "Linux Distribution"
+    placeholder: "22.0.0"
+  validations:
+    required: false
+ - Version: [eg. 22]
+---
+- type: textarea
+  id: context
+  attributes:
+    label: Additional context
+    description: "If applicable, add screenshots to help explain your problem."
+    value: |
+
+
+
+    
+    render: bash
+  validations:
+    required: true
