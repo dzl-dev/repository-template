@@ -15,9 +15,9 @@ body:
     value: |
       Thanks for taking the time to fill out this feature request!
 - type: input
-  id: prevalence
+  id: relative
   attributes:
-    label: Bug prevalence
+    label: Problem relative
     description: "Is your feature request related to a problem? Please describe."
     placeholder: "A clear and concise description of what the problem is. Eg. I'm always frustrated when [...]"
   validations:
@@ -27,16 +27,18 @@ body:
   attributes:
     label: "Describe the solution you'd like"
     description: "A clear and concise description of what you want to happen."
+  renderer: text
   validations:
     required: true
 - type: textarea
   id: alternatives
+  renderer: text
   attributes:
     label: "Describe alternatives you've considered"
     description: "A clear and concise description of any alternative solutions or features you've considered."
   validations:
     required: true
-- type: input
+- type: textarea
   id: context
   attributes:
     label: Additional context
