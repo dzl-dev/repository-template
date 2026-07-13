@@ -64,6 +64,7 @@ body:
   attributes:
     label: Web Browser
     options:
+      - Not applicable
       - Brave
       - Chrome
       - Edge
@@ -84,6 +85,7 @@ body:
   attributes:
     label: "Smarthphone OS"
     options:
+      - Not applicable
       - Android
       - iOS
   validations:
@@ -101,6 +103,7 @@ body:
   attributes:
     label: "Web Browser"
     options:
+      - Not applicable
       - Brave
       - Chrome
       - Edge
