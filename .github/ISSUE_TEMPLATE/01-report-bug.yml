@@ -21,7 +21,6 @@ body:
     render: bash
   validations:
     required: true
-
 - type: textarea
   id: behavior-expected
   attributes:
