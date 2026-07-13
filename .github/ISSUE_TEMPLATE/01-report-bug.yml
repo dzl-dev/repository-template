@@ -17,7 +17,6 @@ body:
       2. Click on '....'
       3. Scroll down to '....'
       4. See error
-    render: bash
   validations:
     required: true
 - type: textarea
@@ -35,7 +34,7 @@ body:
     description: "If applicable, add screenshots to help explain your problem."
   validations:
     required: true
----
+
 - type: dropdown
   id: os
   attributes:
@@ -83,7 +82,7 @@ body:
     placeholder: "22.0.0"
   validations:
     required: false
----
+
  - Device: [eg. iPhone 15]
  - OS: [e.g. iOS 26]
 - type: dropdown
@@ -124,7 +123,7 @@ body:
   validations:
     required: false
  - Version: [eg. 22]
----
+
 - type: textarea
   id: context
   attributes:
