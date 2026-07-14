@@ -6,7 +6,7 @@ on:
 
 jobs:
   check-source-branch:
-    runs-on: 
+    runs-on: ubuntu-24.04
     steps:
       - name: Verify Allowed Source Branch
         if: github.head_ref != 'staging' # The ONLY branch allowed to merge into main
