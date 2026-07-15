@@ -7,7 +7,7 @@
 
 ## Getting Started
 
-1. Clone repository `git clone https://github.com/dzl-dev/repository-template`
+1. Clone repository from main branch `git clone https://github.com/dzl-dev/repository-template`
 
 
 ## Help
