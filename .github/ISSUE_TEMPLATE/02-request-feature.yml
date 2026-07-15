@@ -1,0 +1,48 @@
+---
+name: Feature request
+description: Suggest an idea for this project
+assignees: schmittyd
+labels: enhancement
+title: "[REQUEST: FEATURE]"
+type: Feature
+
+body:
+- type: markdown
+  attributes:
+    value: "## Welcome!"
+- type: markdown
+  attributes:
+    value: |
+      Thanks for taking the time to fill out this feature request!
+- type: input
+  id: relative
+  attributes:
+    label: Problem relative
+    description: "Is your feature request related to a problem? Please describe."
+    placeholder: "A clear and concise description of what the problem is. Eg. I'm always frustrated when [...]"
+  validations:
+    required: true
+- type: textarea
+  id: solution-wanted
+  attributes:
+    label: "Describe the solution you'd like"
+    description: "A clear and concise description of what you want to happen."
+    render: text
+  validations:
+    required: true
+- type: textarea
+  id: alternatives
+  attributes:
+    label: "Describe alternatives you've considered"
+    description: "A clear and concise description of any alternative solutions or features you've considered."
+    render: text
+  validations:
+    required: true
+- type: textarea
+  id: context
+  attributes:
+    label: Additional context
+    description: "Additional context"
+    placeholder: "Add any other context or screenshots about the feature request here."
+  validations:
+    required: true
