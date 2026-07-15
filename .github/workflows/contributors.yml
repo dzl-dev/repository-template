@@ -1,6 +1,6 @@
 on:
   push:
-    branches: [testing]
+    branches: [staging]
 permissions:
   contents: write
 jobs:
