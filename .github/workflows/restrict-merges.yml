@@ -6,7 +6,7 @@ on:
 
 jobs:
   check-source-branch:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     steps:
       - name: Verify Allowed Source Branch
         if: github.head_ref != 'testing' # The ONLY branch allowed to merge into main
