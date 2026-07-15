@@ -1,6 +1,8 @@
 on:
   push:
     branches: [testing]
+permissions:
+  contents: write
 jobs:
   contrib-readme-job:
     runs-on: ubuntu-latest
