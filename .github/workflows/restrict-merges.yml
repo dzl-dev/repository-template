@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Verify Allowed Source Branch
-        if: github.head_ref != 'dev' # The ONLY branch allowed to merge into main
+        if: github.head_ref != 'dev' # The ONLY branch allowed to merge into testing
         run: |
           echo "ERROR: You can only merge into 'testing' from the 'dev' branch."
           echo "Your current source branch is: ${{ github.head_ref }}"
