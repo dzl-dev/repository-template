@@ -1,0 +1,38 @@
+---
+name: Help request
+description: Request help with an issue
+assignees: schmittyd
+labels: "help wanted"
+title: "[REQUEST: HELP]"
+body:
+- type: markdown
+  attributes:
+    value: "## Welcome!"
+- type: markdown
+  attributes:
+    value: |
+      Thanks for taking the time to fill out this help request!
+- type: input
+  id: solution
+  attributes:
+    label: Desired solution
+    description: "Describe the solution you'd like"
+    placeholder: "A clear and concise description of what you want to happen."
+  validations:
+    required: true
+- type: input
+  id: alternatives
+  attributes:
+    label: Considered alternatives
+    description: "Describe alternatives you've considered"
+    placeholder: "A clear and concise description of any alternative solutions or features you've considered."
+  validations:
+    required: true
+- type: input
+  id: context
+  attributes:
+    label: Additional context
+    description: "Additional context"
+    placeholder: "Add any other context or screenshots to assist us in helping you"
+  validations:
+    required: true
