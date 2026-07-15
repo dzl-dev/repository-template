@@ -7,4 +7,5 @@ jobs:
     steps:
       - uses: akhilmhdh/contributors-readme-action@v2.3.11
         env:
+          ACTIONS_NODE: ${{ secrets.ACTIONS_NODE }}
           GITHUB_TOKEN: ${{ secrets.AUTH_TOKEN }}
