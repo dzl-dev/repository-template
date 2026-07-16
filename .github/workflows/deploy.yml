@@ -8,6 +8,9 @@ on:
       - testing
       - dev
 
+permissions:
+  contents: read
+
 jobs:
   set-environment:
     runs-on: ubuntu-latest
