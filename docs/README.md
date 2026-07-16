@@ -23,7 +23,7 @@
 
 ## Contributing
 
-[Contributing this project](docs/CONTRIBUTING.md)
+[Contributing this project](CONTRIBUTING.md)
 
 
 ## Contributors
