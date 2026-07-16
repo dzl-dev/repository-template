@@ -5,6 +5,7 @@ on:
       - main # The branch you want to protect
 
 jobs:
+  ## Restrick from staging branch ##
   check-source-branch:
     runs-on: ubuntu-latest
     steps:
