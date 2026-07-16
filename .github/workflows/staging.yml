@@ -1,0 +1,21 @@
+name: Restrict PR Source Branches
+on:
+  pull_request:
+    branches:
+      - staging # The branch you want to protect
+
+permissions: {}
+
+jobs:
+  check-source-branch:
+    permissions:
+      contents: read
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify Allowed Source Branch
+        if: github.head_ref != 'testing' # The ONLY branch allowed to merge into staging
+        run: |
+          echo "ERROR: You can only merge into 'staging' from the 'testing' branch."
+          echo "Your current source branch is: ${{ github.head_ref }}"
+          exit 1
