@@ -1,6 +1,6 @@
 # Contributing to this project
 
-All contributions must follow the the [Contribution guidelines for this project](CONTRIBUTING.md)
+All contributions must follow the [Contribution guidelines for this project](CONTRIBUTING.md)
 
 1. Clone repository from default `dev` branch `git clone https://github.com/dzl-dev/repository-template`.
 2. Make your suggested changes.
