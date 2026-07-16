@@ -1,0 +1,42 @@
+name: Deploy Workflow Gatekeeper
+
+on:
+  pull_request:
+    branches:
+      - main
+      - staging
+      - testing
+    paths:
+      - '.github/workflows/deploy.yml'
+
+jobs:
+  validate-pipeline-flow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate Source and Target Pair
+        run: |
+          TARGET="${{ github.base_ref }}"
+          SOURCE="${{ github.head_ref }}"
+          
+          echo "Target Branch: $TARGET"
+          echo "Source Branch: $SOURCE"
+          
+          # Rule 1: main only allows staging
+          if [ "$TARGET" = "main" ] && [ "$SOURCE" != "staging" ]; then
+            echo "ERROR: Modifications to deploy.yml targeting 'main' must originate from 'staging'."
+            exit 1
+          fi
+          
+          # Rule 2: staging only allows testing
+          if [ "$TARGET" = "staging" ] && [ "$SOURCE" != "testing" ]; then
+            echo "ERROR: Modifications to deploy.yml targeting 'staging' must originate from 'testing'."
+            exit 1
+          fi
+          
+          # Rule 3: testing only allows dev
+          if [ "$TARGET" = "testing" ] && [ "$SOURCE" != "dev" ]; then
+            echo "ERROR: Modifications to deploy.yml targeting 'testing' must originate from 'dev'."
+            exit 1
+          fi
+          
+          echo "Success: Branch progression is valid."
