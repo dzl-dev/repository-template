@@ -8,10 +8,6 @@ on:
       - testing
       - dev
 
-permissions:
-  contents: read
-  pull-requests: write
-
 jobs:
   set-environment:
     runs-on: ubuntu-latest
