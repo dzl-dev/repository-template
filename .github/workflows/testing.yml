@@ -4,6 +4,8 @@ on:
     branches:
       - testing # The branch you want to protect
 
+permissions: {}
+
 jobs:
   ## Restrict from dev branch ##
   check-source-branch:
