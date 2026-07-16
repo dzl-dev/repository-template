@@ -8,14 +8,15 @@ on:
       - testing
       - dev
 
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   set-environment:
     runs-on: ubuntu-latest
     outputs:
       env_name: ${{ steps.determine-env.outputs.target_env }}
-    permissions:
-      contents: read
-      pull-requests: write
     steps:
       - name: Determine Target Environment
         id: determine-env
@@ -35,10 +36,7 @@ jobs:
     runs-on: ubuntu-latest
     # Binds the execution to GitHub environment release gates
     environment: ${{ needs.set-environment.outputs.env_name }}
-    permissions:
-      contents: read
-      pull-requests: write
-    
+      
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
