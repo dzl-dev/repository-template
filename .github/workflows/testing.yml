@@ -5,6 +5,7 @@ on:
       - testing # The branch you want to protect
 
 jobs:
+  ## Restrict from dev branch ##
   check-source-branch:
     runs-on: ubuntu-latest
     steps:
