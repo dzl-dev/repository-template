@@ -1,4 +1,4 @@
-name: Multi-Environment Deployment
+name: Pure GitHub Build and Artifact Pipeline
 
 on:
   push:
@@ -17,7 +17,7 @@ jobs:
       - name: Determine Target Environment
         id: determine-env
         run: |
-          if [ "${{ github.ref_ref_name }}" = "main" ]; then
+          if [ "${{ github.ref_name }}" = "main" ]; then
             echo "target_env=production" >> $GITHUB_OUTPUT
           elif [ "${{ github.ref_name }}" = "staging" ]; then
             echo "target_env=staging" >> $GITHUB_OUTPUT
@@ -27,10 +27,10 @@ jobs:
             echo "target_env=development" >> $GITHUB_OUTPUT
           fi
 
-  build-and-deploy:
+  compile-and-package:
     needs: set-environment
     runs-on: ubuntu-latest
-    # Tells GitHub which environment secrets/variables to load
+    # Binds the execution to GitHub environment release gates
     environment: ${{ needs.set-environment.outputs.env_name }}
     
     steps:
@@ -40,27 +40,21 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version: '20'
           cache: 'npm'
 
       - name: Install Dependencies
         run: npm ci
 
-      - name: Run Build
+      - name: Run Quality Verification Tests
+        run: npm test
+
+      - name: Build Application Package
         run: npm run build
 
-      - name: Deploy to Environment Server
-        uses: appleboy/ssh-action@v1.0.3
+      - name: Archive and Publish Build Artifact
+        uses: actions/upload-artifact@v4
         with:
-          # GitHub automatically fetches the secret belonging to the active environment
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            echo "Deploying code from branch: ${{ github.ref_name }} to ${{ needs.set-environment.outputs.env_name }}"
-            cd /var/www/apps/${{ needs.set-environment.outputs.env_name }}
-            git fetch origin
-            git checkout ${{ github.ref_name }}
-            git pull origin ${{ github.ref_name }}
-            npm install --production
-            pm2 restart ${{ needs.set-environment.outputs.env_name }}-app
+          name: compiled-build-${{ needs.set-environment.outputs.env_name }}
+          path: dist/ # The directory containing your built application code
+          retention-days: 30 # Retains the build package on GitHub for 30 days
