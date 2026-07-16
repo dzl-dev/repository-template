@@ -4,11 +4,12 @@ on:
     branches:
       - testing # The branch you want to protect
 
-permissions: {}
-
 jobs:
   ## Restrict from dev branch ##
   check-source-branch:
+    permissions:
+      contents: read
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - name: Verify Allowed Source Branch
