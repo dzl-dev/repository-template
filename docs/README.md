@@ -23,7 +23,7 @@
 
 ## Contributing
 
-[Contribution guidelines for this project](CONTRIBUTING.md)
+[Contributing this project](CONTRIBUTING.md)
 
 
 ## Contributors
